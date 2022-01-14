@@ -9,7 +9,7 @@ test('default root route', async (t) => {
   const res = await app.inject({
     url: '/'
   })
-  t.match(res.payload, "Welcome to the KMS server. Available routes:\n/buy/:product_id (payload credit card)\n/activate/:product_id/:key\n/key")
+  t.match(res.payload, "Welcome to the KMS server. Available routes:\n/buy/:product_id (payload credit card)\n/activate/:product_id/:key\n/key (+4 sub routes)")
 })
 
 // inject callback style:
