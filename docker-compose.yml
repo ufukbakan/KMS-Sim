@@ -7,7 +7,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "9092:9092"
+      - "80:9092"
   postgres:
     container_name: kms_postgres
     image: postgres:13.5-alpine
