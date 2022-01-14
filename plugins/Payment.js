@@ -27,9 +27,9 @@ function PaymentService(fastify, opts, done) {
         if (card.number
             && card.expirationDate
             && card.CVC
-            && card.number.length == 16
+            && String(card.number).match(/^[0-9]{16}$/)
             && cardDidntExpire(card.expirationDate)
-            && String(card.CVC).length == 3) {
+            && String(card.CVC).match(/^[0-9]{3}$/)) {
             return true
         }
         return false
